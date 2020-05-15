@@ -28,6 +28,7 @@
 <link rel="stylesheet" href="assets/css/ace-rtl.min.css" />
 <link rel="shortcut icon" href="assets/images/3.ico" type="image/x-icon" />
 <script src="assets/js/ace-extra.min.js"></script>
+<script src="assets/js/menuControl.js"></script>
 </head>
 
 <body class="no-skin">
@@ -120,7 +121,7 @@
 
 			<ul class="nav nav-list">
 				<li class="">
-					<a href="">
+					<a href="javascript:void(0);" onclick="consumptionManagement()">
 						<i class="menu-icon fa fa-cog"></i> 
 						<span class="menu-text">消费管理 </span> 
 					</a>
@@ -128,7 +129,7 @@
 				</li>
 				
 				<li class="">
-					<a href="">
+					<a href="javascript:void(0);" onclick="guestManagement()">
 						<i class="menu-icon fa fa-user"></i> 
 						<span class="menu-text">房客管理</span> 
 					</a>

@@ -28,6 +28,7 @@
 <link rel="stylesheet" href="assets/css/ace-rtl.min.css" />
 <link rel="shortcut icon" href="assets/images/3.ico" type="image/x-icon" />
 <script src="assets/js/ace-extra.min.js"></script>
+<script src="assets/js/menuControl.js"></script>
 </head>
 
 <body class="no-skin">
@@ -120,7 +121,7 @@
 
 			<ul class="nav nav-list">
 				<li class="">
-					<a href="">
+					<a href="javascript:void(0);" onclick="systemManagement()">
 						<i class="menu-icon fa fa-cog"></i> 
 						<span class="menu-text">系统管理 </span> 
 					</a>
@@ -128,7 +129,7 @@
 				</li>
 				
 				<li class="">
-					<a href="">
+					<a href="javascript:void(0);" onclick="informationKeep()">
 						<i class="menu-icon fa fa-cog"></i> 
 						<span class="menu-text">基础信息维护 </span> 
 					</a>
@@ -136,7 +137,7 @@
 				</li>
 				
 				<li class="">
-					<a href="">
+					<a href="javascript:void(0);" onclick="roomManagement()">
 						<i class="menu-icon fa fa-bed"></i>
 						<span class="menu-text">客房管理</span> 
 					</a>
@@ -144,7 +145,7 @@
 				</li>
 				
 				<li class="">
-					<a href="">
+					<a href="javascript:void(0);" onclick="consumptionManagement()">
 						<i class="menu-icon fa fa-cog"></i> 
 						<span class="menu-text">消费管理 </span> 
 					</a>
@@ -152,7 +153,7 @@
 				</li>
 				
 				<li class="">
-					<a href="">
+					<a href="javascript:void(0);" onclick="guestManagement()">
 						<i class="menu-icon fa fa-user"></i> 
 						<span class="menu-text">房客管理</span> 
 					</a>
@@ -160,7 +161,7 @@
 				</li>
 				
 				<li class="">
-					<a href="">
+					<a href="javascript:void(0);" onclick="reportManagement()">
 						<i class="menu-icon fa fa-cog"></i> 
 						<span class="menu-text">报表管理 </span> 
 					</a>
@@ -231,14 +232,8 @@
 					</div>
 					<!-- /.page-header -->
 
-					<div class="row">
-						<div class="col-sm-2"></div>
-						<div class="col-sm-8">
-							<h3>
-								<span class="blue bolder"></span>&nbsp;</h3>
-						</div>
-						<div class="col-sm-2"></div>
-
+					<div id="content">
+					
 					</div>
 					<!-- /.row -->
 				</div>
