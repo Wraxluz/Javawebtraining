@@ -3,65 +3,18 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 	<head>
-		<!-- <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /> -->
-		
 		<title>登录</title>
-
 		<meta charset="UTF-8">
 		<meta name="robots" content="index,follow">
-	
 		<meta name="description" content="User login page" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
-
-		<!-- bootstrap & fontawesome -->
 		<link rel="stylesheet" href="assets/css/bootstrap.min.css" />
 		<link rel="stylesheet" href="assets/font-awesome/4.5.0/css/font-awesome.min.css" />
-
-		<!-- text fonts -->
 		<link rel="stylesheet" href="assets/css/fonts.googleapis.com.css" />
-
-		<!-- ace styles -->
 		<link rel="stylesheet" href="assets/css/ace.min.css" />
-
-		<!--[if lte IE 9]>
-			<link rel="stylesheet" href="assets/css/ace-part2.min.css" />
-		<![endif]-->
 		<link rel="stylesheet" href="assets/css/ace-rtl.min.css" />
 		<script type="text/javascript" src="assets/js/login.js"></script>
-		<!--[if lte IE 9]>
-		  <link rel="stylesheet" href="assets/css/ace-ie.min.css" />
-		<![endif]-->
-
-		<!-- HTML5shiv and Respond.js for IE8 to support HTML5 elements and media queries -->
-
-		<!--[if lte IE 8]>
-		<script src="assets/js/html5shiv.min.js"></script>
-		<script src="assets/js/respond.min.js"></script>
-		<![endif]-->
 	</head>
-
-<%
-String flag=(String)request.getAttribute("flag");
-if(flag==null||!flag.equals("1")){
-	String value1 = "", value2 = "";
-	Cookie cookie = null;
-	Cookie[] cookies = request.getCookies();
-	if (cookies != null) {
-		for (int i = 0; i < cookies.length; i++) {
-			cookie = cookies[i];
-			if (cookie.getName().equals("num"))
-				value1 = cookie.getValue();
-			if (cookie.getName().equals("password"))
-				value2 = cookie.getValue();
-		}
-		if(!value1.equals("")&&!value2.equals("")){
-			RequestDispatcher rDispatcher = request.getRequestDispatcher("/login");
-			rDispatcher.forward(request, response);
-		}
-	}
-}
-
-%>
 	<body class="login-layout">
 		<div class="main-container">
 			<div class="main-content">
@@ -70,11 +23,10 @@ if(flag==null||!flag.equals("1")){
 						<div class="login-container">
 							<div class="center">
 								<h1>
-									
-									<span class="red">USuperStar</span>
+									<span class="red">LMMHotel</span>
 									<span class="white" id="id-text2">后台管理系统</span>
 								</h1>
-								<h4 class="blue" id="id-company-text">&copy;Azure Tech</h4>
+								<h4 class="blue" id="id-company-text">&copy;sj university</h4>
 							</div>
 
 							<div class="space-6"></div>
@@ -88,15 +40,12 @@ if(flag==null||!flag.equals("1")){
 												<i class="ace-icon fa fa-sign-in green"></i>
 												后台登录
 												</h4>
-											
-											
-
 											<div class="space-6"></div>
 											<h5>
-											${fail}
+											<!--登录失败信息 -->
+											${error}
 											</h5>
-
-											<form action="login" method="POST">
+											<form action="login.do" method="POST">
 												<fieldset>
 													<label class="block clearfix">
 														<span class="block input-icon input-icon-right">
@@ -142,12 +91,12 @@ if(flag==null||!flag.equals("1")){
 												</a>
 											</div>
 
-											<!--<div>
-												<a href="#" data-target="#signup-box" class="user-signup-link">
-													新会员注册
-													<i class="ace-icon fa fa-arrow-right"></i>
-												</a>
-											</div>-->
+<!-- 											<div> -->
+<!-- 												<a href="#" data-target="#signup-box" class="user-signup-link"> -->
+<!-- 													新会员注册 -->
+<!-- 													<i class="ace-icon fa fa-arrow-right"></i> -->
+<!-- 												</a> -->
+<!-- 											</div> -->
 										</div>
 									</div><!-- /.widget-body -->
 								</div><!-- /.login-box -->
@@ -207,21 +156,12 @@ if(flag==null||!flag.equals("1")){
 								&nbsp; &nbsp; &nbsp;
 							</div>
 						</div>
+						</div>
 					</div><!-- /.col -->
 				</div><!-- /.row -->
 			</div><!-- /.main-content -->
 		</div><!-- /.main-container -->
-
-		<!-- basic scripts -->
-
-		<!--[if !IE]> -->
 		<script src="assets/js/jquery-2.1.4.min.js"></script>
-
-		<!-- <![endif]-->
-
-		<!--[if IE]>
-<script src="assets/js/jquery-1.11.3.min.js"></script>
-<![endif]-->
 		<script type="text/javascript">
 			if('ontouchstart' in document.documentElement) document.write("<script src='assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
 		</script>
@@ -236,8 +176,6 @@ if(flag==null||!flag.equals("1")){
 				$(target).addClass('visible');//show target
 			 });
 			});
-			
-
 			
 			//换背景
 			jQuery(function($) {

@@ -47,5 +47,10 @@ public class Admin {
 		this.admin_per = admin_per;
 		this.admin_note = admin_note;
 	}
+	@Override
+	public String toString() {
+		return "Admin [admin_id=" + admin_id + ", admin_name=" + admin_name + ", admin_pwd=" + admin_pwd
+				+ ", admin_per=" + admin_per + ", admin_note=" + admin_note + "]";
+	}
 	
 }

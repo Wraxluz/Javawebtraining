@@ -56,13 +56,13 @@ public class GoodsDaoImpl extends BaseDao implements GoodsDao{
 	public int add(Goods goods){
 		int count = 0;
 		try {
-			Class.forName("com.mysql.jdbc.Driver");
+			Class.forName("com.mysql.cj.jdbc.Driver");
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		}
 		try{
 			//创建数据库连接
-			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/user?useUnicode=true&characterEncoding=UTF-8&useSSL=false","root","root");
+			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/user?useUnicode=true&serverTimezone=GMT%2B8&characterEncoding=UTF-8&useSSL=false","root","root");
 			//创建Stateme对象,执行sql语句
 			String sql = "insert into goodsInfo(" +
 		               "goods_name,goods_type,goods_price," +
