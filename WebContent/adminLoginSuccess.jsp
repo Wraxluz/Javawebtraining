@@ -94,29 +94,6 @@
 				}
 			</script>
 
-<!-- 			<div class="sidebar-shortcuts" id="sidebar-shortcuts"> -->
-<!-- 				<div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large"> -->
-<!-- 					<a class="btn btn-success" href=""> <i class="ace-icon fa fa-cog"></i></a> -->
-<!-- 					<a class="btn btn-info" href=""> <i class="ace-icon fa fa-bed"></i></a> -->
-<!-- 					<a class="btn btn-success" href=""> <i class="ace-icon fa fa-cog"></i></a> -->
-<!-- 					<a class="btn btn-warning" href=""><i class="ace-icon fa fa-user"></i></a> -->
-<!-- 					<a class="btn btn-warning" href=""><i class="ace-icon fa fa-user"></i></a> -->
-
-					<!-- <button class="btn btn-danger">
-							<i class="ace-icon fa fa-cogs"></i>
-						</button> -->
-<!-- 				</div> -->
-
-<!-- 				<div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini"> -->
-<!-- 						<span class="btn btn-success"></span> -->
-
-<!-- 						<span class="btn btn-info"></span> -->
-
-<!-- 						<span class="btn btn-warning"></span> -->
-
-						
-<!-- 					</div> -->
-<!-- 			</div> -->
 			<!-- /.sidebar-shortcuts -->
 
 			<ul class="nav nav-list">

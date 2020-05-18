@@ -29,7 +29,7 @@ public class AdminDaoImpl extends BaseDao implements AdminDao {
 		}
 		try{
 			//创建数据库连接
-			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/user?useUnicode=true&serverTimezone=GMT%2B8&characterEncoding=UTF-8","root","root");
+			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/hotel?useUnicode=true&serverTimezone=GMT%2B8&characterEncoding=UTF-8","root","root");
 			//创建Stateme对象,执行sql语句
 			Statement st = conn.createStatement();
 			//创建sql语句
@@ -56,9 +56,9 @@ public class AdminDaoImpl extends BaseDao implements AdminDao {
 		}
 		try{
 			//创建数据库连接
-			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/user?useUnicode=true&serverTimezone=GMT%2B8&characterEncoding=UTF-8","root","root");
+			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/hotel?useUnicode=true&serverTimezone=GMT%2B8&characterEncoding=UTF-8","root","root");
 			//创建Stateme对象,执行sql语句
-			String sql = "insert into studentinfo(" +
+			String sql = "insert into admininfo(" +
 		               "admin_id,admin_name,admin_pwd,admin_per,admin_note)" +
 		               " values(?,?,?,?,?)";
 		    PreparedStatement ps = null;
@@ -81,7 +81,7 @@ public class AdminDaoImpl extends BaseDao implements AdminDao {
 	//删除管理员
 	@Override
 	public void delete(int id){
-		String sql = "delete from userinfo where admin_id=?";
+		String sql = "delete from admininfo where admin_id=?";
 		super.update(sql, id);
 	}
 	//查询管理员
@@ -89,7 +89,7 @@ public class AdminDaoImpl extends BaseDao implements AdminDao {
 	@Override
 	public List<Admin> pageList(int index,int size){
 		List<Admin> adminList = new ArrayList<Admin>();
-		String sql = "select * from bookinfo limit ?,?";
+		String sql = "select * from admininfo limit ?,?";
 		//这里的query是继承的BaseDao中的
 		super.query(sql,(index-1)*size,size);
 		//循环结果集
@@ -107,7 +107,7 @@ public class AdminDaoImpl extends BaseDao implements AdminDao {
 
 	public List<Admin> findByName(String name){
 		List<Admin> adminList = new ArrayList<Admin>();
-		String sql = "select * from nfo where book_name like ?";
+		String sql = "select * from admininfo where admin_name like ?";
 		super.query(sql, "%"+name+"%");
 		try {
 			while(rs.next()){
@@ -124,7 +124,7 @@ public class AdminDaoImpl extends BaseDao implements AdminDao {
 	@Override
 	public Admin findById(int id){
 		Admin admin = null;
-		String sql = "select * from userinfo where admin_id=?";
+		String sql = "select * from admininfo where admin_id=?";
 		super.query(sql, id);
 		try {
 			if(rs.next()){
@@ -140,7 +140,7 @@ public class AdminDaoImpl extends BaseDao implements AdminDao {
 	@Override
 	public void update(Admin b){
 		//自增的话,mysql就不用将id字段再列出来了。oracle需要
-		String sql = "update userinfo set admin_name=?,admin_pwd=?,"
+		String sql = "update admininfo set admin_name=?,admin_pwd=?,"
         + "admin_per=?,admin_note=?";
 		super.update(sql,b.getAdmin_name(),b.getAdmin_pwd(),b.getAdmin_per(),b.getAdmin_note());
 		

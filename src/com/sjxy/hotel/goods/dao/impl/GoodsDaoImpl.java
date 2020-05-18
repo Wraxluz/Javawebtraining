@@ -17,7 +17,7 @@ public class GoodsDaoImpl extends BaseDao implements GoodsDao{
 	@Override
 	public List<Goods> pageList(int index,int size){
 		List<Goods> goodsList = new ArrayList<Goods>();
-		String sql = "select * from bookinfo limit ?,?";
+		String sql = "select * from goodsinfo limit ?,?";
 		//这里的query是继承的BaseDao中的
 		super.query(sql,(index-1)*size,size);
 		//循环结果集
@@ -36,7 +36,7 @@ public class GoodsDaoImpl extends BaseDao implements GoodsDao{
 
 	public List<Goods> findByName(String name){
 		List<Goods> goodsList = new ArrayList<Goods>();
-		String sql = "select * from bookinfo where book_name like ?";
+		String sql = "select * from goodsinfo where goods_name like ?";
 		super.query(sql, "%"+name+"%");
 		try {
 			while(rs.next()){
@@ -62,7 +62,7 @@ public class GoodsDaoImpl extends BaseDao implements GoodsDao{
 		}
 		try{
 			//创建数据库连接
-			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/user?useUnicode=true&serverTimezone=GMT%2B8&characterEncoding=UTF-8&useSSL=false","root","root");
+			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/hotel?useUnicode=true&serverTimezone=GMT%2B8&characterEncoding=UTF-8&useSSL=false","root","root");
 			//创建Stateme对象,执行sql语句
 			String sql = "insert into goodsInfo(" +
 		               "goods_name,goods_type,goods_price," +
@@ -88,14 +88,14 @@ public class GoodsDaoImpl extends BaseDao implements GoodsDao{
 	}
 	//删除商品
 	public void delete(int id){
-		String sql = "delete from bookinfo where book_id=?";
+		String sql = "delete from goodsinfo where goods_id=?";
 		super.update(sql, id);
 	}
 	//修改_查询对应数据
 	@Override
 	public Goods findById(int id){
 		Goods goods = null;
-		String sql = "select * from bookinfo where book_id=?";
+		String sql = "select * from goodsinfo where goods_id=?";
 		super.query(sql, id);
 		try {
 			if(rs.next()){
@@ -112,7 +112,7 @@ public class GoodsDaoImpl extends BaseDao implements GoodsDao{
 	@Override
 	public void update(Goods b){
 		//自增的话,mysql就不用将id字段再列出来了。oracle需要
-		String sql = "update goodsInfo set goods_name=?,goods_type=?,goods_price=?," +
+		String sql = "update goodsinfo set goods_name=?,goods_type=?,goods_price=?," +
 		               "con_unit=?,con_note=?";
 		super.update(sql, b.getGoods_name(),b.getGoods_price(),b.getGoods_type(),
 				b.getCon_unit(),b.getCon_note());
