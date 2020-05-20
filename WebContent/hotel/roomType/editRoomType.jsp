@@ -34,7 +34,24 @@
 <body class="no-skin">
 	<%@ include file="/ModelUp.jsp"%>
 	<div id="content">
-					
+		<form class="form-horizontal" role="form" action="editConfirmRoomType.do">
+		  <div class="form-group">
+		    <label class="col-sm-2 control-label">房间号</label>
+		    <div class="col-sm-10">
+		      <input class="form-control" name="roomId" value="${room.room_id}" readonly="readonly">
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <label for="inputPassword" class="col-sm-2 control-label">房间类型</label>
+		    <div class="col-sm-10">
+		      <input type="text" class="form-control" placeholder="请输入房间类型"  value="${room.room_type!='暂无数据'?room.room_type:''}" name="roomType">
+		    </div>
+		  </div>
+		  <div class="form-group" style="text-align: center;">
+			  <button class="btn btn-primary" type="submit">确认</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			  <button class="btn btn-danger" type="button" onclick="javascript:window.location.href='roomType.do'">取消</button>                  
+		  </div>
+		</form>			
 	</div>
 	<%@ include file="/ModelDown.jsp"%>
 <script src="/Hotel/assets/js/jquery-2.1.4.min.js"></script>

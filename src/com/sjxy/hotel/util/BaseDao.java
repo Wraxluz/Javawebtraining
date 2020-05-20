@@ -22,7 +22,7 @@ public class BaseDao {
 		try {
 			//2.2  创建数据库连接
 			conn = DriverManager.getConnection(
-					"jdbc:mysql://localhost:3306/user?useUnicode=true&serverTimezone=GMT%2B8&characterEncoding=UTF-8&useSSL=false","root","root");
+					"jdbc:mysql://localhost:3306/hotel?useUnicode=true&serverTimezone=GMT%2B8&characterEncoding=UTF-8&useSSL=false","root","root");
 		}catch (SQLException e) {
 			e.printStackTrace();
 		}

@@ -34,11 +34,14 @@ public class LoginServlet extends HttpServlet {
         Admin admin = adminService.login(name, password);
         if (admin!=null) {
 			if (admin.getAdmin_per().equals("系统管理员")) {
-				request.getRequestDispatcher("/adminLoginSuccess.jsp").forward(request,response);
+				request.setAttribute("loginUser", admin.getAdmin_name());
+				request.getRequestDispatcher("/hotel/loginSuccess/adminLoginSuccess.jsp").forward(request,response);
 			} else if(admin.getAdmin_per().equals("酒店前台")){
-				request.getRequestDispatcher("/receptionLoginSuccess.jsp").forward(request,response);
+				request.setAttribute("loginUser", admin.getAdmin_name());
+				request.getRequestDispatcher("/hotel/loginSuccess/receptionLoginSuccess.jsp").forward(request,response);
 			} else if(admin.getAdmin_per().equals("经理")){
-				request.getRequestDispatcher("/managerLoginSuccess.jsp").forward(request,response);
+				request.setAttribute("loginUser", admin.getAdmin_name());
+				request.getRequestDispatcher("/hotel/loginSuccess/managerLoginSuccess.jsp").forward(request,response);
 			} else {
 				request.setAttribute("error", "您没有权限登录该系统，请联系管理员");
 				request.getRequestDispatcher("/index.jsp").forward(request,response);

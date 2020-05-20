@@ -8,12 +8,16 @@
 		<meta name="robots" content="index,follow">
 		<meta name="description" content="User login page" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
-		<link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-		<link rel="stylesheet" href="assets/font-awesome/4.5.0/css/font-awesome.min.css" />
-		<link rel="stylesheet" href="assets/css/fonts.googleapis.com.css" />
-		<link rel="stylesheet" href="assets/css/ace.min.css" />
-		<link rel="stylesheet" href="assets/css/ace-rtl.min.css" />
-		<script type="text/javascript" src="assets/js/login.js"></script>
+		<link rel="stylesheet" href="/Hotel/assets/css/bootstrap.min.css" />
+		<link rel="stylesheet"
+			href="/Hotel/assets/font-awesome/4.5.0/css/font-awesome.min.css" />
+		<link rel="stylesheet" href="/Hotel/assets/css/fonts.googleapis.com.css" />
+		<link rel="stylesheet" href="/Hotel/assets/css/ace.min.css"
+			class="ace-main-stylesheet" id="main-ace-style" />
+		<link rel="stylesheet" href="/Hotel/assets/css/ace-skins.min.css" />
+		<link rel="stylesheet" href="/Hotel/assets/css/ace-rtl.min.css" />
+		<link rel="shortcut icon" href="/Hotel/assets/images/3.ico" type="image/x-icon" />
+		<script src="/Hotel/assets/js/ace-extra.min.js"></script>
 	</head>
 	<body class="login-layout">
 		<div class="main-container">
@@ -161,7 +165,17 @@
 				</div><!-- /.row -->
 			</div><!-- /.main-content -->
 		</div><!-- /.main-container -->
-		<script src="assets/js/jquery-2.1.4.min.js"></script>
+		<script src="/Hotel/assets/js/jquery-2.1.4.min.js"></script>
+		<script src="/Hotel/assets/js/bootstrap.min.js"></script>
+		<script src="/Hotel/assets/js/jquery-ui.custom.min.js"></script>
+		<script src="/Hotel/assets/js/jquery.ui.touch-punch.min.js"></script>
+		<script src="/Hotel/assets/js/jquery.easypiechart.min.js"></script>
+		<script src="/Hotel/assets/js/jquery.sparkline.index.min.js"></script>
+		<script src="/Hotel/assets/js/jquery.flot.min.js"></script>
+		<script src="/Hotel/assets/js/jquery.flot.pie.min.js"></script>
+		<script src="/Hotel/assets/js/jquery.flot.resize.min.js"></script>
+		<script src="/Hotel/assets/js/ace-elements.min.js"></script>
+		<script src="/Hotel/assets/js/ace.min.js"></script>
 		<script type="text/javascript">
 			if('ontouchstart' in document.documentElement) document.write("<script src='assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
 		</script>

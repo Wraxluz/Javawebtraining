@@ -83,5 +83,14 @@ public class Room {
 	public void setRoom_note(String room_note) {
 		this.room_note = room_note;
 	}
+	@Override
+	public String toString() {
+		return "Room [room_id=" + room_id + ", room_type=" + room_type + ", room_status=" + room_status
+				+ ", room_floor=" + room_floor + ", room_standardPrice=" + room_standardPrice + ", room_discountPrice="
+				+ room_discountPrice + ", room_memberPrice=" + room_memberPrice + ", room_vipPrice=" + room_vipPrice
+				+ ", room_note=" + room_note + "]";
+	}
+	
+	
 	
 }
