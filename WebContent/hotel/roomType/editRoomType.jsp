@@ -34,7 +34,7 @@
 <body class="no-skin">
 	<%@ include file="/ModelUp.jsp"%>
 	<div id="content">
-		<form class="form-horizontal" role="form" action="editConfirmRoomType.do">
+		<form class="form-horizontal" role="form" action="/Hotel/editConfirmRoomType.do" method="post">
 		  <div class="form-group">
 		    <label class="col-sm-2 control-label">房间号</label>
 		    <div class="col-sm-10">

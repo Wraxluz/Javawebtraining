@@ -7,7 +7,7 @@ function systemManagement() {
 
 function informationKeep() {
 	$("#content").html("");
-	var str = "<a href='roomType.do'>客房类型管理</a><br>" +
+	var str = "<a href='/Hotel/roomType.do'>客房类型管理</a><br>" +
 			"<a href='#'>楼层管理</a><br>" +
 			"<a href='#'>商品类别管理</a><br>" +
 			"<a href='#'>商品管理</a><br>" +

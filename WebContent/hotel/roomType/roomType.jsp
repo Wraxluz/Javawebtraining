@@ -48,7 +48,7 @@
 				<c:forEach items="${roomList}" var="s">
 						<tr>
 		        			<td>${s.room_id}</td>
-		        			<td>${s.room_type}</td>
+		        			<td>${s.room_type!=''?s.room_type:'暂无数据'}</td>
 		        			<td><a href="editRoomType.do?roomId=${s.room_id}">修改</a></td>
 		        			<td><a href="delRoomType.do?roomId=${s.room_id}" onclick="if(confirm('确定删除?')==false)return false;">删除</a></td>
 						</tr>

@@ -34,21 +34,21 @@
 <body class="no-skin">
 	<%@ include file="/ModelUp.jsp"%>
 	<div id="content">
-		<form class="form-horizontal" role="form" action="addRoomType.do">
+		<form class="form-horizontal" role="form" action="/Hotel/addRoomType.do" method="post" id="addRoomTypeForm">
 		  <div class="form-group">
 		    <label class="col-sm-2 control-label">房间号</label>
 		    <div class="col-sm-10">
-		      <input class="form-control" name="roomId" placeholder="请输入房间号" >
+		      <input class="form-control" name="roomId" id="roomId" placeholder="请输入房间号" >
 		    </div>
 		  </div>
 		  <div class="form-group">
 		    <label for="inputPassword" class="col-sm-2 control-label">房间类型</label>
 		    <div class="col-sm-10">
-		      <input type="text" class="form-control" placeholder="请输入房间类型"  name="roomType">
+		      <input type="text" class="form-control" placeholder="请输入房间类型"  name="roomType" id="roomType">
 		    </div>
 		  </div>
 		  <div class="form-group" style="text-align: center;">
-			  <button class="btn btn-primary" type="submit">确认</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			  <button class="btn btn-primary" type="button" onclick="submitAddForm()">确认</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 			  <button class="btn btn-danger" type="button" onclick="javascript:window.location.href='/Hotel/roomType.do'">取消</button>                  
 		  </div>
 		</form>			
@@ -65,6 +65,17 @@
 <script src="/Hotel/assets/js/jquery.flot.resize.min.js"></script>
 <script src="/Hotel/assets/js/ace-elements.min.js"></script>
 <script src="/Hotel/assets/js/ace.min.js"></script>
+<script type="text/javascript">
+	function submitAddForm() {
+		if ($("#roomId").val().trim()=="") {
+			alert("请输入房间号");
+		} else if ($("#roomType").val().trim()=="") {
+			alert("请输入房间类型");
+		} else {
+			$("#addRoomTypeForm").submit();
+		}
+	}
+</script>
 </body>
 
 </html>
