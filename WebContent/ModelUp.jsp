@@ -37,7 +37,7 @@
 
 							<li class="divider"></li>
 
-							<li><a href="logout"> <i
+							<li><a href="/Hotel/index.jsp"> <i
 									class="ace-icon fa fa-power-off"></i> 退出登录
 							</a></li>
 						</ul></li>

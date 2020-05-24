@@ -34,7 +34,48 @@
 <body class="no-skin">
 	<%@ include file="/ModelUp.jsp"%>
 	<div id="content">
-		
+		<form class="form-horizontal" role="form" action="/Hotel/editConfirmGoods.do" method="post">
+		  <div class="form-group" hidden="hidden">
+		    <label class="col-sm-2 control-label">商品Id</label>
+		    <div class="col-sm-10">
+		      <input type="text" class="form-control" name="goodsId" id="goodsId" placeholder="商品Id" value="${goods.goods_id}">
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <label class="col-sm-2 control-label">商品名称</label>
+		    <div class="col-sm-10">
+		      <input type="text" class="form-control" name="goodsName" id="goodsName" value="${goods.goods_name}">
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <label for="inputPassword" class="col-sm-2 control-label">商品类别</label>
+		    <div class="col-sm-10">
+		      <input type="text" class="form-control" value="${goods.goods_type}"  name="goodsType" id="goodsType">
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <label for="inputPassword" class="col-sm-2 control-label">价格</label>
+		    <div class="col-sm-10">
+		      <input type="text" class="form-control" value="${goods.goods_price}"  name="goodsPrice" id="goodsPrice">
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <label for="inputPassword" class="col-sm-2 control-label">单位</label>
+		    <div class="col-sm-10">
+		      <input type="text" class="form-control" value="${goods.goods_unit}"  name="goodsUnit" id="goodsUnit">
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <label for="inputPassword" class="col-sm-2 control-label">备注</label>
+		    <div class="col-sm-10">
+		      <input type="text" class="form-control" value="${goods.goods_note}"  name="goodsNote" id="goodsNote">
+		    </div>
+		  </div>
+		  <div class="form-group" style="text-align: center;">
+			  <button class="btn btn-primary" type="submit">确认</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			  <button class="btn btn-danger" type="button" onclick="javascript:window.location.href='goods.do'">取消</button>                  
+		  </div>
+		</form>			
 	</div>
 	<%@ include file="/ModelDown.jsp"%>
 <script src="/Hotel/assets/js/jquery-2.1.4.min.js"></script>

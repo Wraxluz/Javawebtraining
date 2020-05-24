@@ -5,20 +5,8 @@ public class Goods {
 	private String goods_name;
 	private String goods_type;
 	private int goods_price;
-	private int con_unit;
-	private String con_note;
-	public Goods() {
-		super();
-	}
-	public Goods(int goods_id, String goods_name, String goods_type, int goods_price, int con_unit, String con_note) {
-		super();
-		this.goods_id = goods_id;
-		this.goods_name = goods_name;
-		this.goods_type = goods_type;
-		this.goods_price = goods_price;
-		this.con_unit = con_unit;
-		this.con_note = con_note;
-	}
+	private String goods_unit;
+	private String goods_note;
 	public int getGoods_id() {
 		return goods_id;
 	}
@@ -43,16 +31,37 @@ public class Goods {
 	public void setGoods_price(int goods_price) {
 		this.goods_price = goods_price;
 	}
-	public int getCon_unit() {
-		return con_unit;
+	public String getGoods_unit() {
+		return goods_unit;
 	}
-	public void setCon_unit(int con_unit) {
-		this.con_unit = con_unit;
+	public void setGoods_unit(String goods_unit) {
+		this.goods_unit = goods_unit;
 	}
-	public String getCon_note() {
-		return con_note;
+	public String getGoods_note() {
+		return goods_note;
 	}
-	public void setCon_note(String con_note) {
-		this.con_note = con_note;
+	public void setGoods_note(String goods_note) {
+		this.goods_note = goods_note;
 	}
+	public Goods(int goods_id, String goods_name, String goods_type, int goods_price, String goods_unit,
+			String goods_note) {
+		super();
+		this.goods_id = goods_id;
+		this.goods_name = goods_name;
+		this.goods_type = goods_type;
+		this.goods_price = goods_price;
+		this.goods_unit = goods_unit;
+		this.goods_note = goods_note;
+	}
+	public Goods() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	@Override
+	public String toString() {
+		return "Goods [goods_id=" + goods_id + ", goods_name=" + goods_name + ", goods_type=" + goods_type
+				+ ", goods_price=" + goods_price + ", goods_unit=" + goods_unit + ", goods_note=" + goods_note + "]";
+	}
+	
+	
 }
