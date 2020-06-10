@@ -47,6 +47,12 @@
 		      <input type="text" class="form-control" placeholder="请输入房间类型"  value="${room.room_type!='暂无数据'?room.room_type:''}" name="roomType">
 		    </div>
 		  </div>
+		  <div class="form-group">
+		    <label for="inputPassword" class="col-sm-2 control-label">楼层</label>
+		    <div class="col-sm-10">
+		      <input type="text" class="form-control" placeholder="请输入房间类型"  value="${room.room_floor!='暂无数据'?room.room_floor:''}" name="roomFloor">
+		    </div>
+		  </div>
 		  <div class="form-group" style="text-align: center;">
 			  <button class="btn btn-primary" type="submit">确认</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 			  <button class="btn btn-danger" type="button" onclick="javascript:window.location.href='roomType.do'">取消</button>                  

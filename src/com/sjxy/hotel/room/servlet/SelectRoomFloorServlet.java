@@ -14,16 +14,16 @@ import com.sjxy.hotel.room.service.RoomService;
 import com.sjxy.hotel.room.service.impl.RoomServiceImpl;
 
 /**
- * Servlet implementation class RoomFloorServlet
+ * Servlet implementation class SelectRoomFloorServlet
  */
-@WebServlet("/roomFloor.do")
-public class RoomFloorServlet extends HttpServlet {
+@WebServlet("/selectRoomFloor.do")
+public class SelectRoomFloorServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public RoomFloorServlet() {
+    public SelectRoomFloorServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -41,10 +41,12 @@ public class RoomFloorServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
 		response.setContentType("text/html;charset=UTF-8");
+		String roomFloor = request.getParameter("roomFloor");
 		RoomService roomService = new RoomServiceImpl();
-		List<Room> roomList = roomService.roomList();
+		List<Room> roomList = roomService.selectRoomFloor(roomFloor);
 		request.setAttribute("roomList", roomList);
-		request.getRequestDispatcher("/hotel/roomFloor/roomFloor.jsp").forward(request, response);
+		request.setAttribute("floor", roomFloor);
+		request.getRequestDispatcher("/hotel/roomType/roomType.jsp").forward(request, response);
 	}
 
 }

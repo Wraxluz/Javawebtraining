@@ -43,7 +43,8 @@ public class EditConfirmRoomType extends HttpServlet {
 		String roomId = request.getParameter("roomId");
 		Integer roomId1 = Integer.valueOf(roomId);
 		String roomType = request.getParameter("roomType");
-		roomService.updateRoomType(roomId1,roomType);
+		String roomFloor = request.getParameter("roomFloor");
+		roomService.updateRoomType(roomId1,roomType,roomFloor);
 		request.getRequestDispatcher("roomType.do").forward(request, response);
 	}
 
