@@ -20,7 +20,7 @@ public class MemberServlet extends HttpServlet{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private int index;
+	private int index = 1;
 	private int size = 10;
 	public MemberServlet() {
         super();

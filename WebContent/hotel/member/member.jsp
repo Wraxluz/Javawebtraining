@@ -39,7 +39,7 @@
 		<form class="bs-example bs-example-form" role="form">
         <div class="row">
 	        <div class="col-sm-1">
-	        	<a class="btn btn-primary btn-sm" href="./addmember.jsp" role="button">添加会员</a>
+	        	<a class="btn btn-primary btn-sm" href="/Hotel/hotel/member/addmember.jsp" role="button">添加会员</a>
 	        </div>
             <div class="col-sm-3">
                 <div class="input-group">
