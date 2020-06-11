@@ -14,7 +14,7 @@ import com.sjxy.hotel.util.BaseDao;
 public class MemberDaoImpl extends BaseDao implements MemberDao {
 	//添加会员
 	@Override
-	public int add(Member me) {
+	public int add(String me_name, String me_sex, String me_pwd, int me_phone, String me_addr, String me_email, int me_inte) {
 		int count = 0;
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
@@ -26,19 +26,20 @@ public class MemberDaoImpl extends BaseDao implements MemberDao {
 			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/hotel?useUnicode=true&serverTimezone=GMT%2B8&characterEncoding=UTF-8","root","root");
 			//创建Stateme对象,执行sql语句
 			String sql = "insert into memberinfo(" +
-		               "admin_id,admin_name,admin_pwd,admin_per,admin_note)" +
-		               " values(?,?,?,?,?)";
+		               "me_id,me_name,me_sex,me_pwd,me_phone" +
+		               "me_addr,me_email,me_inte,me_level)"+
+		               " values(?,?,?,?,?,?,?,?,?)";
 		    PreparedStatement ps = null;
 		    try {
 		            ps = conn.prepareStatement(sql);
-		            ps.setString(1, me.getMe_name());
-		            ps.setString(2, me.getMe_sex());
-		            ps.setString(3, me.getMe_pwd());
-		            ps.setInt(4, me.getMe_phone());
-		            ps.setString(5, me.getMe_addr());
-		            ps.setString(6, me.getMe_email());
-		            ps.setInt(7, me.getMe_inte());
-		            ps.setString(8, me.getMe_level());
+		            ps.setString(1, me_name);
+		            ps.setString(2, me_sex);
+		            ps.setString(3, me_pwd);
+		            ps.setInt(4, me_phone);
+		            ps.setString(5, me_addr);
+		            ps.setString(6, me_email);
+		            ps.setInt(7, me_inte);
+
 		            return (ps.executeUpdate());
 
 		     } catch (SQLException e) {
@@ -110,8 +111,8 @@ public class MemberDaoImpl extends BaseDao implements MemberDao {
 	public void update(Member b) {
 		String sql = "update memberinfo set me_name=?,me_sex=?,"
 		        + "me_pwd=?,me_phone=?,me_addr=?,me_email=?,"
-				+"me_inte=?,me_level=?,me_endlive=?,me_end=?";
-		super.update(sql,b.getMe_name(),b.getMe_sex(),b.getMe_pwd(),b.getMe_phone(),b.getMe_addr(), b.getMe_email(),b.getMe_inte(),b.getMe_level(),b.getMe_endlive(),b.getMe_end());
+				+"me_inte=?,me_level=?";
+		super.update(sql,b.getMe_name(),b.getMe_sex(),b.getMe_pwd(),b.getMe_phone(),b.getMe_addr(), b.getMe_email(),b.getMe_inte(),b.getMe_level());
 	}
 
 }

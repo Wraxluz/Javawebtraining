@@ -43,9 +43,10 @@ public class AddRoomTypeServlet extends HttpServlet {
 		String roomId = request.getParameter("roomId");
 		Integer roomId1 = Integer.valueOf(roomId);
 		String roomType = request.getParameter("roomType");
+		String roomFloor = request.getParameter("roomFloor");
 		Room room = roomService.findById(roomId1);
 		if (room==null) {
-			int result = roomService.add(roomId1, roomType);
+			int result = roomService.add(roomId1, roomType, roomFloor);
 			if (result==1) {
 				request.getRequestDispatcher("roomType.do").forward(request, response);
 			} else {

@@ -11,7 +11,7 @@ function informationKeep() {
 			"<a href='/Hotel/roomFloor.do'>楼层管理</a><br>" +
 			"<a href='#'>商品类别管理</a><br>" +
 			"<a href='/Hotel/goods.do'>商品管理</a><br>" +
-			"<a href='#'>会员管理</a>";
+			"<a href='/Hotel/hotel/member/member.jsp'>会员管理</a>";
 	$("#content").append(str);
 }
 

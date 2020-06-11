@@ -1,29 +1,27 @@
-package com.sjxy.hotel.room.servlet;
+package com.sjxy.hotel.member.servlet;
 
 import java.io.IOException;
 import java.util.List;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.sjxy.hotel.room.entity.Room;
-import com.sjxy.hotel.room.service.RoomService;
-import com.sjxy.hotel.room.service.impl.RoomServiceImpl;
+import com.sjxy.hotel.member.entity.Member;
+import com.sjxy.hotel.member.service.MemberService;
+import com.sjxy.hotel.member.service.impl.MemberServiceImpl;
 
-/**
- * Servlet implementation class RoomFloorServlet
- */
-@WebServlet("/roomFloor.do")
-public class RoomFloorServlet extends HttpServlet {
+
+public class MemberServlet extends HttpServlet{
+
+	/**
+	 * 
+	 */
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public RoomFloorServlet() {
+	private int index;
+	private int size = 10;
+	public MemberServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -41,10 +39,9 @@ public class RoomFloorServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
 		response.setContentType("text/html;charset=UTF-8");
-		RoomService roomService = new RoomServiceImpl();
-		List<Room> roomList = roomService.roomList();
-		request.setAttribute("roomList", roomList);
-		request.getRequestDispatcher("/hotel/roomFloor/roomFloor.jsp").forward(request, response);
+		MemberService memberService = new MemberServiceImpl();
+		List<Member> memberList = memberService.pageList(index, size );
+		request.setAttribute("memberList", memberList);
+		request.getRequestDispatcher("/hotel/member/member.jsp").forward(request, response);
 	}
-
 }

@@ -16,12 +16,15 @@ public interface RoomDao {
 	public Room findById(int id);
 	
 	//添加客房类型
-	public int add(int roomId,String roomType);
+	public int add(int roomId,String roomType,String roomFloor);
 	
 	//根据房间号修改房间类型
-	public void update(int roomId1,String roomType);
+	public void update(int roomId1,String roomType,String roomFloor);
 	
 	//查询所有的客房信息
 	public List<Room> roomList();
+	
+	// 根据楼层查找客房信息
+	public List<Room> selectRoomFloor(String roomFloor);
 
 }

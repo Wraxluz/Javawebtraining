@@ -6,8 +6,6 @@ import com.sjxy.hotel.member.entity.Member;
 
 public interface MemberDao {
 
-	int add(Member me);
-
 	void delete(int id);
 
 	List<Member> pageList(int index, int size);
@@ -17,5 +15,7 @@ public interface MemberDao {
 	Member findById(int id);
 
 	void update(Member b);
+
+	int add(String me_name, String me_sex, String me_pwd, int me_phone, String me_addr, String me_email, int me_inte);
 
 }

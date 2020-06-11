@@ -1,4 +1,4 @@
-<%@ page import="java.io.FileOutputStream"%>
+	<%@ page import="java.io.FileOutputStream"%>
 <%@ page import="java.io.OutputStreamWriter"%>
 <%@ page import="java.io.OutputStream"%>
 <%@ page import="java.io.BufferedReader"%>
@@ -13,7 +13,7 @@
 <head>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 <meta charset="utf-8" />
-<title>酒店管理系统-后台</title>
+<title>酒店管理系统-管理员</title>
 <meta charset="UTF-8">
 <meta name="description" content="overview &amp; stats" />
 <meta name="viewport"

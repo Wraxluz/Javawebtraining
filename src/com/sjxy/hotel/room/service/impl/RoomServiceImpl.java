@@ -27,9 +27,9 @@ public class RoomServiceImpl implements RoomService {
 
 	//根据房间号修改房间类型
 	@Override
-	public void updateRoomType(int roomId1,String roomType) {
+	public void updateRoomType(int roomId1,String roomType,String roomFloor) {
 		RoomDao roomDao = new RoomDaoImpl();
-		roomDao.update(roomId1,roomType);
+		roomDao.update(roomId1,roomType,roomFloor);
 	}
 
 	//根据房间号删除房间类型
@@ -40,10 +40,17 @@ public class RoomServiceImpl implements RoomService {
 	}
 
 	@Override
-	public int add(int roomId, String roomType) {
+	public int add(int roomId, String roomType, String roomFloor) {
 		RoomDao roomDao = new RoomDaoImpl();
-		int result = roomDao.add(roomId, roomType);
+		int result = roomDao.add(roomId, roomType,roomFloor);
 		return result;
+	}
+
+	@Override
+	public List<Room> selectRoomFloor(String roomFloor) {
+		RoomDao roomDao = new RoomDaoImpl();
+		List<Room> roomList = roomDao.selectRoomFloor(roomFloor);
+		return roomList;
 	}
 
 }

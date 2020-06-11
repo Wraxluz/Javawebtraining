@@ -44,6 +44,7 @@ public class RoomTypeServlet extends HttpServlet {
 		RoomService roomService = new RoomServiceImpl();
 		List<Room> roomList = roomService.roomList();
 		request.setAttribute("roomList", roomList);
+		request.setAttribute("floor", "Ыљга");
 		request.getRequestDispatcher("/hotel/roomType/roomType.jsp").forward(request, response);
 	}
 
