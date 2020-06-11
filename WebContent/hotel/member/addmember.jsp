@@ -34,7 +34,7 @@
 <body class="no-skin">
 	<%@ include file="/ModelUp.jsp"%>
 	<div id="content">
-		<form class="form-horizontal" role="form" action="/Hotel/addmember.do" method="post" id="addMemberForm">
+		<form class="form-horizontal" role="form" action="member.do" method="post" id="addMemberForm">
 		  <div class="form-group">
 		    <label class="col-sm-2 control-label">会员名</label>
 		    <div class="col-sm-10">
@@ -79,7 +79,7 @@
 		  </div>
 		  <div class="form-group" style="text-align: center;">
 			  <button class="btn btn-primary" type="button" onclick="submitAddForm()">确认</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			  <button class="btn btn-danger" type="button" onclick="javascript:window.location.href='/Hotel/goods.do'">取消</button>                  
+			  <button class="btn btn-danger" type="button" onclick="javascript:window.location.href='member.do'">取消</button>                  
 		  </div>
 		</form>			
 	</div>
@@ -97,16 +97,22 @@
 <script src="/Hotel/assets/js/ace.min.js"></script>
 <script type="text/javascript">
 	function submitAddForm() {
-		if ($("#goodsName").val().trim()=="") {
-			alert("请输入商品名称");
-		} else if ($("#goodsType").val().trim()=="") {
-			alert("请输入商品类别");
-		} else if ($("#goodsPrice").val().trim()=="") {
-			alert("请输入价格");
-		} else if ($("#goodsUnit").val().trim()=="") {
-			alert("请输入单位");
+		if ($("#memberName").val().trim()=="") {
+			alert("请输入会员名称");
+		} else if ($("#memberSex").val().trim()=="") {
+			alert("请输入会员性别");
+		} else if ($("#memberPwd").val().trim()=="") {
+			alert("请输入会员密码");
+		} else if ($("#memberPhone").val().trim()=="") {
+			alert("请输入手机号");
+		} else if ($("#memberAddr").val().trim()=="") {
+			alert("请输入会员地址");
+		} else if ($("#memberEmail").val().trim()=="") {
+			alert("请输入email");
+		} else if ($("#memberInte").val().trim()=="") {
+			alert("请输入会员积分");
 		} else {
-			$("#addGoodsForm").submit();
+			$("#addMemberForm").submit();
 		}
 	}
 </script>

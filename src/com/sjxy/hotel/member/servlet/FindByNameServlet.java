@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.List;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -12,7 +13,7 @@ import com.sjxy.hotel.member.entity.Member;
 import com.sjxy.hotel.member.service.MemberService;
 import com.sjxy.hotel.member.service.impl.MemberServiceImpl;
 
-
+@WebServlet("/findByName.do")
 public class FindByNameServlet extends HttpServlet{
 
 	/**
@@ -43,7 +44,7 @@ public class FindByNameServlet extends HttpServlet{
 		List<Member> memberList = goodsService.findByName(memberName);
 		request.setAttribute("memberList", memberList);
 		request.setAttribute("memberNameMo", memberName);
-		request.getRequestDispatcher("/hotel/member/member.jsp").forward(request, response);
+		request.getRequestDispatcher("member.do").forward(request, response);
 	}
 
 }
