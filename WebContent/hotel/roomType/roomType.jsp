@@ -36,11 +36,34 @@
 	<%@ include file="/ModelUp.jsp"%>
 	<div id="content" class="container">
 		<a class="btn btn-primary" href="/Hotel/hotel/roomType/addRoomType.jsp" role="button">添加新房型</a>
+		<div class="btn-group">
+		    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">${floor!=null?floor:"所有"}
+		        <span class="caret"></span>
+		    </button>
+		    <ul class="dropdown-menu" role="menu">
+		    	<li>
+		            <a href="roomType.do">所有</a>
+		        </li>
+		        <li>
+		            <a href="selectRoomFloor.do?roomFloor=一层">一层</a>
+		        </li>
+		        <li>
+		            <a href="selectRoomFloor.do?roomFloor=二层">二层</a>
+		        </li>
+		        <li>
+		            <a href="selectRoomFloor.do?roomFloor=三层">三层</a>
+		        </li>
+		        <li>
+		            <a href="selectRoomFloor.do?roomFloor=四层">四层</a>
+		        </li>
+		    </ul>
+		</div>
 		<table class="table table-striped table-bordered" style="text-align: center;">
 			<thead>
 				<tr>
 					<td>房间号</td>
 					<td>客房类型</td>
+					<td>楼层</td>
 					<td colspan="2">操作</td>
 				</tr>
 			</thead>
@@ -49,6 +72,7 @@
 						<tr>
 		        			<td>${s.room_id}</td>
 		        			<td>${s.room_type!=''?s.room_type:'暂无数据'}</td>
+		        			<td>${s.room_floor!=''?s.room_floor:'暂无数据'}</td>
 		        			<td><a href="editRoomType.do?roomId=${s.room_id}">修改</a></td>
 		        			<td><a href="delRoomType.do?roomId=${s.room_id}" onclick="if(confirm('确定删除?')==false)return false;">删除</a></td>
 						</tr>

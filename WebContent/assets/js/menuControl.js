@@ -7,9 +7,7 @@ function systemManagement() {
 
 function informationKeep() {
 	$("#content").html("");
-	var str = "<a href='/Hotel/roomType.do'>客房类型管理</a><br>" +
-			"<a href='/Hotel/roomFloor.do'>楼层管理</a><br>" +
-			"<a href='#'>商品类别管理</a><br>" +
+	var str = "<a href='/Hotel/roomType.do'>客房管理</a><br>" +
 			"<a href='/Hotel/goods.do'>商品管理</a><br>" +
 			"<a href='/Hotel/hotel/member/member.jsp'>会员管理</a>";
 	$("#content").append(str);

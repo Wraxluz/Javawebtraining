@@ -47,6 +47,12 @@
 		      <input type="text" class="form-control" placeholder="请输入房间类型"  name="roomType" id="roomType">
 		    </div>
 		  </div>
+		  <div class="form-group">
+		    <label for="inputPassword" class="col-sm-2 control-label">楼层</label>
+		    <div class="col-sm-10">
+		      <input type="text" class="form-control" placeholder="请输入楼层"  name="roomFloor" id="roomFloor">
+		    </div>
+		  </div>
 		  <div class="form-group" style="text-align: center;">
 			  <button class="btn btn-primary" type="button" onclick="submitAddForm()">确认</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 			  <button class="btn btn-danger" type="button" onclick="javascript:window.location.href='/Hotel/roomType.do'">取消</button>                  
